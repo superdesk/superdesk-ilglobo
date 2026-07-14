@@ -18,7 +18,12 @@ init_data = Path(ABS_PATH) / "data"
 if init_data.exists():
     INIT_DATA_PATH = init_data
 
-INSTALLED_APPS = []
+INSTALLED_APPS = [
+    "planning",
+    "analytics",
+]
+
+MODULES.append("planning")
 
 PLANNING_EVENT_TEMPLATES_ENABLED = True
 
