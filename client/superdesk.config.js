@@ -1,0 +1,128 @@
+/**
+ * This is the default configuration file for the Superdesk application. By default,
+ * the app will use the file with the name "superdesk.config.js" found in the current
+ * working directory, but other files may also be specified using relative paths with
+ * the SUPERDESK_CONFIG environment variable or the grunt --config flag.
+ */
+module.exports = function() {
+    return {
+        apps: [
+            'superdesk-planning',
+            'superdesk.analytics',
+        ],
+        importApps: [
+            '../index',
+            'superdesk-planning',
+            'superdesk-analytics',
+        ],
+
+        defaultRoute: '/workspace/monitoring',
+
+        langOverride: {
+            en: {
+                'ANPA Category': 'Category',
+                'ANPA CATEGORY': 'CATEGORY',
+                'multi-line quote': 'pullquote',
+                'Multi-line quote': 'Pullquote',
+            }
+        },
+
+        view: {
+            timeformat: 'HH:mm',
+            dateformat: 'DD.MM.YYYY',
+        },
+
+        shortTimeFormat: 'HH:mm, DD.MM.YYYY',
+        shortDateFormat: 'HH:mm, DD.MM.YYYY',
+        shortWeekFormat: 'HH:mm, DD.MM.YYYY',
+        startingDay: '1',
+        defaultTimezone: 'Europe/Prague',
+
+        editor3: { browserSpellCheck: true, },
+
+        search_cvs: [
+            {id: 'topics', name:'Topics', field: 'subject', list: 'topics'},
+            {id: 'language', name:'Language', field: 'language', list: 'languages'}
+        ],
+
+        features: {
+            preview: 1,
+            swimlane: {columnsLimit: 99, defaultNumberOfColumns: 4},
+            editor3: true,
+            editorHighlights: true,
+            noPublishOnAuthoringDesk: true,
+            customAuthoringTopbar: {
+                toDesk: true,
+                publish: true,
+
+                sendAndDuplicate: {
+                    deskName: 'Test',
+                    stageName: 'Working',
+                },
+            },
+            validatePointOfInterestForImages: true,
+            editFeaturedImage: true,
+            searchShortcut: true,
+            elasticHighlight: true,
+            autorefreshContent: true,
+            nestedItemsInOutputStage: false,
+            planning: true,
+            sendToPersonal: true,
+        },
+
+        item_profile: { change_profile: 1 },
+
+        workspace: {
+            planning: true,
+            assignments: true,
+            analytics: true,
+        },
+
+        ui: {
+            italicAbstract: false,
+            },
+
+        list: {
+            priority: [
+                'urgency'
+            ],
+            firstLine: [
+                'headline',
+                'highlights',
+                'markedDesks',
+                'associatedItems',
+                'versioncreated'
+            ],
+            secondLine: [
+                'state',
+                'update',
+                'scheduledDateTime',
+                'embargo',
+                'flags',
+                'updated',
+                'provider',
+                'desk',
+                'fetchedDesk',
+                'used',
+                'nestedlink',
+                'translations'
+            ],
+            compactView: {
+                firstLine: [
+                    'headline',
+                    'slugline',
+                ],
+                secondLine: [],
+            },
+        },
+
+        monitoring: {
+            scheduled: {
+                sort: {
+                    default: { field: 'publish_schedule', order: 'asc' },
+                    allowed_fields_to_sort: [ 'publish_schedule' ]
+                }
+            },
+        },
+    };
+};

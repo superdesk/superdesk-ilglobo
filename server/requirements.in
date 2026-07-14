@@ -1,0 +1,4 @@
+honcho
+celery-redbeat
+
+git+https://github.com/superdesk/superdesk-core.git@v3.5.0#egg=superdesk-core
