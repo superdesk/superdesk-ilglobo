@@ -6,7 +6,7 @@
  */
 module.exports = function() {
     return {
-        apps: [,
+        apps: [
             'superdesk-planning',
             'superdesk.analytics',
         ],
