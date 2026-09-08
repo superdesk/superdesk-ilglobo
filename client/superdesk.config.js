@@ -6,9 +6,14 @@
  */
 module.exports = function() {
     return {
-        apps: [],
+        apps: [,
+            'superdesk-planning',
+            'superdesk.analytics',
+        ],
         importApps: [
             '../index',
+            'superdesk-planning',
+            'superdesk-analytics',
         ],
 
         defaultRoute: '/workspace/monitoring',
